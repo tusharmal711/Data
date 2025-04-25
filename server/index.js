@@ -12,7 +12,8 @@ const MONGOURL=process.env.MONGO_URL;
 app.use(express.json());
 app.use(express.static('public'));
 import cors from "cors";
-app.use(cors());
+app.use(cors({ origin: 'https://userdata-git-main-tushar-mals-projects.vercel.app/' }));
+
 app.listen(PORT,async()=>{
     console.log("Server is running on : localhost :",PORT);
     connectDB();

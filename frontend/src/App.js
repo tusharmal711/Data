@@ -36,7 +36,7 @@ function App() {
     formData.append("video",video);
 
     try {
-      const response = await axios.post("http://localhost:3009/api/user", formData, {
+      const response = await axios.post("https://data-mg4g.onrender.com/api/user", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert(response.data.message);
@@ -49,7 +49,7 @@ function App() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:3009/api/fetch");
+      const response = await axios.get("https://data-mg4g.onrender.com/api/fetch");
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -94,11 +94,11 @@ function App() {
             <td>
               {console.log(user.image)}
 
-              <img src={`http://localhost:3009/uploads/`+user.image} width="100" height="100" alt="User" />
+              <img src={`https://data-mg4g.onrender.com/uploads/`+user.image} width="100" height="100" alt="User" />
             </td>
            <td>
             {console.log(user.video)}
-           <video src={`http://localhost:3009/uploads/`+user.video} width="200" height="100" controls/>
+           <video src={`https://data-mg4g.onrender.com/uploads/`+user.video} width="200" height="100" controls/>
            </td>
           </tr>
         ))}
